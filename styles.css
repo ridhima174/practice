@@ -1306,194 +1306,96 @@ body {
   animation-delay: 0.10s;
 }
 
+/* ====== RESPONSIVE FIX (NAVBAR + FOOTER) ====== */
 
-
-/* =========================================
-   🌐 RESPONSIVE DESIGN FIXES
-   ========================================= */
-
-/* General adjustments */
-* {
-  box-sizing: border-box;
-}
-
-/* Make text scale better */
-h1, h2, h3, p {
-  word-wrap: break-word;
-}
-
-/* Navbar responsive */
+/* For tablets */
 @media (max-width: 992px) {
+  /* Navbar remains horizontal, centered */
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .logo {
+    flex-basis: 100%;
+    text-align: center;
+    margin-bottom: 10px;
   }
 
   .nav-links {
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
-  }
-
-  .nav-links li a {
-    display: block;
-    width: 100%;
-    text-align: left;
-    padding: 10px;
-  }
-}
-
-/* Hero section responsive */
-@media (max-width: 768px) {
-  .hero {
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-  }
-
-  .hero-content {
-    text-align: center;
-    padding: 0 20px;
-  }
-
-  .hero-content h1 {
-    font-size: 1.8rem;
-  }
-
-  .hero-content h3 {
-    font-size: 1.1rem;
-  }
-
-  .explore-btn {
-    padding: 10px 20px;
-    font-size: 0.9rem;
-  }
-
-  .social-icons {
-    display: none; /* hide side icons for mobile */
-  }
-}
-
-/* Core Vision Section */
-@media (max-width: 992px) {
-  .vision-grid {
-    grid-template-columns: repeat(2, 1fr);
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
-  }
-}
-@media (max-width: 600px) {
-  .vision-grid {
-    grid-template-columns: 1fr;
-  }
-  .vision-card img {
-    width: 80px;
-  }
-}
-
-/* Flagship Events */
-@media (max-width: 768px) {
-  .events-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-  }
-  .event-card {
-    width: 90%;
-    margin: auto;
-  }
-}
-
-/* Industry Leaders Section */
-@media (max-width: 768px) {
-  .leaders-container {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    align-items: center;
+    padding: 0;
   }
 
-  .leader-card {
-    width: 80%;
-  }
-}
-
-/* Success Stories Section */
-@media (max-width: 768px) {
-  .cards {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
-  .story-card {
-    width: 90%;
-    margin: auto;
-  }
-}
-
-/* Gallery Section */
-@media (max-width: 768px) {
-  .masonry {
-    column-count: 2;
-  }
-}
-@media (max-width: 480px) {
-  .masonry {
-    column-count: 1;
-  }
-}
-
-/* Collaborators Section */
-@media (max-width: 768px) {
-  .collab-container {
-    flex-direction: column;
-    gap: 20px;
+  .nav-links li {
+    display: inline-block;
   }
 
-  .collab-card {
-    width: 90%;
-  }
-
-  .collab-btn {
-    font-size: 1.5rem;
-    width: 45px;
-    height: 45px;
-  }
-}
-
-/* Footer Section */
+  /* ====== FINAL FOOTER RESPONSIVE FIX ====== */
 @media (max-width: 992px) {
   .footer-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 30px;
+    display: flex;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 25px;
   }
 
-  .footer-column, .footer-left {
-    width: 100%;
+  .footer-column,
+  .footer-left {
+    width: 100% !important;
   }
 
-  .subscribe-box {
-    flex-direction: column;
-  }
-
-  .subscribe-box input {
-    width: 100%;
+  .footer-column h4 {
     margin-bottom: 10px;
   }
 
-  .social-media {
-    justify-content: center;
+  .footer-bottom {
+    text-align: center;
+    margin-top: 15px;
+    padding-top: 10px;
   }
 }
 
-/* Hero overlay fix for mobile */
 @media (max-width: 600px) {
-  .overlay {
-    opacity: 0.7;
+  .footer {
+    padding: 30px 15px !important;
+  }
+
+  .footer-container {
+    gap: 20px !important;
+  }
+
+  .footer-column,
+  .footer-left {
+    width: 100% !important;
+    margin-bottom: 15px;
+  }
+
+  .footer-column ul {
+    padding: 0;
+  }
+
+  .footer-column ul li {
+    margin: 6px 0;
+  }
+
+  .footer-column ul li a {
+    font-size: 0.95rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.85rem;
   }
 }
+}
+
+
+
 
 
 

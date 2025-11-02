@@ -418,3 +418,147 @@ body {
   font-size: 14px;
   color: #888;
 }
+/* ✅ Responsive Enhancements — NO style changes, just adaptive fixes */
+/* Responsive fix for TEDx Hero section */
+@media (max-width: 1024px) {
+  .tedx-hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .tedx-bg {
+    object-fit: cover;
+    filter: brightness(0.7);
+  }
+
+  .main-title {
+    margin-top: 0;
+    font-size: 3rem;
+    line-height: 1.2;
+    position: relative;
+    z-index: 5;
+  }
+
+  .side-text.left-text,
+  .side-text.right-text {
+    position: static;
+    transform: none;
+    text-align: center;
+    margin: 10px 0;
+    opacity: 1;
+    animation: none;
+    font-size: 1.4rem;
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-title {
+    font-size: 2.4rem;
+  }
+
+  .side-text.left-text,
+  .side-text.right-text {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .main-title {
+    font-size: 3rem;
+    margin-top: -100px;
+  }
+
+  .left-text,
+  .right-text {
+    display: none;
+  }
+
+  .about-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .about-logo h1 {
+    font-size: 4rem;
+  }
+
+  .glimpses-section {
+    padding: 60px 20px;
+  }
+
+  .masonry-layout {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  .speakers-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .subscribe {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .subscribe input {
+    border-radius: 20px;
+    margin-bottom: 10px;
+    width: 80%;
+  }
+
+  .subscribe button {
+    border-radius: 20px;
+    width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-title {
+    font-size: 2.2rem;
+  }
+
+  .about-section {
+    padding: 50px 0;
+  }
+
+  .about-card {
+    width: 90%;
+    padding: 30px 20px;
+  }
+
+  .about-text {
+    font-size: 1rem;
+  }
+
+  .section-title,
+  .section-title.light {
+    font-size: 2rem;
+  }
+
+  .footer {
+    padding: 30px 10px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+  }
+}
