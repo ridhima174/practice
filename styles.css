@@ -1395,10 +1395,187 @@ body {
 }
 
 
+/* ----------- Default (Desktop view) ------------ */
+.menu-toggle {
+  display: none;
+}
+
+/* ----------- Mobile view (below 768px) ------------ */
+@media (max-width: 768px) {
+  /* Show hamburger icon */
+  .menu-toggle {
+    display: block;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 25px;
+  }
+
+  /* Stack nav items vertically when menu opens */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    padding: 15px 0;
+    border-radius: 0 0 10px 10px;
+    z-index: 999;
+  }
+
+  /* Show links when active */
+  .nav-links.active {
+    display: flex;
+    animation: dropdown 0.3s ease-in-out;
+  }
+
+  /* Animation for smooth dropdown */
+  @keyframes dropdown {
+    from {
+      opacity: 0;
+      transform: translateY(-15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Adjust nav links spacing and style */
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .nav-links li a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+  }
+
+  /* Fix logo position */
+  .navbar .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar .logo-img {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+  }
+}
 
 
+/* Responsive Fix for Vision & Activities Section */
+.vision-section {
+  width: 100%;
+  overflow: visible; /* ensures all cards are shown */
+}
 
+.vision-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  align-items: stretch;
+  width: 100%;
+}
 
+/* Make sure each card stays visible and scales properly */
+.vision-card {
+  flex: 1 1 calc(33.333% - 40px);
+  box-sizing: border-box;
+  min-height: 300px;
+  transition: transform 0.3s ease;
+}
 
+/* Tablet view */
+@media (max-width: 1024px) {
+  .vision-card {
+    flex: 1 1 calc(45% - 20px);
+  }
+}
 
+/* Mobile view */
+@media (max-width: 768px) {
+  .vision-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vision-card {
+    flex: 1 1 100%;
+    width: 90%;
+    max-width: 400px;
+  }
+}
+
+/* ✅ Responsive Fix for Vision & Activities Section */
+@media (max-width: 1024px) {
+  .vision-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .vision-grid {
+    grid-template-columns: 1fr; /* 1 card per row on small screens */
+    gap: 2rem;
+  }
+
+  .vision-card {
+    max-width: 100%;
+    min-height: auto;
+    padding: 1.5rem;
+    text-align: center; /* center on mobile */
+    align-items: center;
+  }
+
+  .vision-card img {
+    margin: 0 auto 1rem;
+    width: 50px;
+    height: 50px;
+  }
+
+  .vision-card h3 {
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .vision-card p {
+    text-align: center;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .core-vision h2 {
+    font-size: 1.8rem;
+  }
+
+  .core-vision .subtitle {
+    font-size: 1rem;
+  }
+
+  .vision-card img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .vision-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .vision-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+}
 
