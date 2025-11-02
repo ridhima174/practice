@@ -31,7 +31,7 @@ function endSplash() {
   splash.style.opacity = 0;
   setTimeout(() => {
     splash.style.display = "none";
-    window.location.href = "home.html"; // redirect to homepage
+    window.location.href = "index.html"; // redirect to homepage
   }, 1000);
 }
 
