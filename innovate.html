@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="innovate.css" />
+</head>
+<body>
+    <section class="innovation-hero">
+  <div class="innovation-hero-content">
+    <h1>Innovation Beyond Imagination</h1>
+    <p>Experience creativity and technology come together — shaping the future through innovation and inspiration.</p>
+    <a href="#explore" class="hero-btn">Explore Now</a>
+  </div>
+</section>
+<section class="event-description">
+  <div class="event-container">
+    <div class="event-image">
+      <img src="ino.png" alt="Event Showcase">
+    </div>
+
+    <div class="event-content">
+      <h2>About the Event</h2>
+      <p>
+       Punjab College of Technical Education, Ludhiana in association with Innovation Mission Punjab organized an Innovation Challenge with the aim to find the next big entrepreneur from Punjab.
+       The event reached out to students and working professionals and created a wave of innovation that echoed throughout the state as it saw around 200 teams participating from different schools
+       and colleges out of which 22 were shortlisted. The Innovation Challenge was open to all and saw participants from various schools, colleges & Universities neighboring Ludhiana in Punjab and
+      presented their idea through their elevator pitch video of their idea and business model.
+
+      </p>
+      <p>
+      the jury members were Mr. Sahil Makkar, Founder of Punjab Angels Network, Mr. Abhay Singhal, founder of TickTalkTo and an alumnus of IIT Bombay
+       Ms Aanchal Sood, Head Pollinator at Innovation Mission Punjab and Mr. Naresh Aggarwal, Dean Corporate RelationsPunjab College of Technical Education
+      </p>
+      <a href="#" class="event-btn">Register Now</a>
+    </div>
+  </div>
+</section>
+<section class="event-winners">
+  <h2>Our Event Winners</h2>
+
+  <div class="winner-container">
+    <div class="winner-card">
+      <img src="win1.png" alt="Winner 1">
+      <div class="winner-overlay">
+        <h3>INDIAN ROOTS:</h3>
+        <h4>FOUNDER:Aishwariya Sharma, Nidhi Sharma & Amanpreet Kaur</h4>
+        <p>Natural homemade chemical-free makeup product 
+            i.e. lip and cheek tint.</p>
+      </div>
+    </div>
+
+    <div class="winner-card">
+      <img src="win2.png" alt="Winner 2">
+      <div class="winner-overlay">
+        <h3>CREATORS:</h3>
+        <h4>FOUNDER: Raghav arora,Simranjeet & Daksh</h4>
+        <p> AROG is used to maintain the AQI level below 70 by generating oxygen with the help of Cyanobacteria: Blue-Green Algae.
+            It is an industry-grade product that can be used in public places and industries to maintain the AQI level and control 
+            global warming..</p>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const section = document.querySelector('.event-description');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        section.classList.add('show');
+      }
+    });
+  }, { threshold: 0.3 });
+
+  observer.observe(section);
+});
+</script>
+</body>
+</html>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-about">
+      <h3>The <span>Entrepreneurship</span> Cell</h3>
+      <p>PCTE Group of Institutes</p>
+      <div class="subscribe">
+        <input type="email" placeholder="Enter your email">
+        <button>&rarr;</button>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h4>OUR EVENTS</h4>
+      <ul>
+        <li><a href="#">Future Business Sharks</a></li>
+        <li><a href="#">Startup Bootcamp</a></li>
+        <li><a href="#">Innovation Challenge</a></li>
+        <li><a href="#">Workshops</a></li>
+        <li><a href="#">TEDx</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h4>USEFUL LINKS</h4>
+      <ul>
+      <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="event.html">event</a></li>
+         <li><a href="Startups.html">Startups</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>CONTACT</h4>
+      <p>PCTE Group of Institutes</p>
+      <p><a href="mailto:support@pctecell.in">support@pctecell.in</a></p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 E-Cell PCTE | All Rights Reserved</p>
+  </div>
+</footer>

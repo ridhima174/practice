@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Lightbulb Mirror Flip Effect</title>
+<style>
+  :root{
+    --size: 160px;      /* change to scale the bulb */
+    --duration: 1.2s;   /* flip speed */
+    --glow-color: #ffe58a;
+  }
+
+  body{
+    height:100vh;
+    margin:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#f6f8fb;
+    font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial;
+  }
+
+  .stage {
+    width:var(--size);
+    height:var(--size);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    perspective:900px; /* gives 3D depth to the Y flip */
+  }
+
+  /* the flipping element */
+  .bulb {
+    width:100%;
+    height:100%;
+    transform-style:preserve-3d;
+    transform-origin:center;
+    /* flip along Y axis like a mirror; alternate so it flips back-and-forth */
+    animation: mirrorFlip var(--duration) ease-in-out infinite alternate;
+  }
+
+  /* shadow/glow behind bulb */
+  .glow {
+    position: absolute;
+    width: calc(var(--size) * 0.9);
+    height: calc(var(--size) * 0.9);
+    border-radius:50%;
+    filter: blur(18px) saturate(120%);
+    opacity:0.85;
+    pointer-events:none;
+    background: radial-gradient(circle at 40% 35%, var(--glow-color) 0%, rgba(255,213,128,0.25) 25%, rgba(255,213,128,0.06) 55%, transparent 70%);
+  }
+
+  /* add a subtle drop shadow under the bulb */
+  .base-shadow {
+    position:absolute;
+    width: calc(var(--size) * 0.55);
+    height: calc(var(--size) * 0.14);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: calc( -1 * var(--size) * 0.06 );
+    background: rgba(0,0,0,0.09);
+    border-radius:50%;
+    filter: blur(8px);
+  }
+
+  /* small shine on front when not flipped fully (gives depth) */
+  .bulb-face {
+    backface-visibility: hidden; /* keep front/back rendering correct */
+  }
+
+  /* subtle animation for inner filament glow */
+  .filament {
+    transform-origin:center;
+    animation: pulse 1.6s ease-in-out infinite;
+  }
+
+  @keyframes mirrorFlip {
+    /* 0 = front, 100% = flipped (mirror) */
+    0%   { transform: rotateY(0deg) scale(1); }
+    100% { transform: rotateY(180deg) scale(1.02); } /* a little scale for pop */
+  }
+
+  @keyframes pulse {
+    0%   { opacity: 0.9; filter: drop-shadow(0 0 6px rgba(255,220,120,0.15)); }
+    50%  { opacity: 1;   filter: drop-shadow(0 0 14px rgba(255,220,120,0.28)); }
+    100% { opacity: 0.95; filter: drop-shadow(0 0 6px rgba(255,220,120,0.12)); }
+  }
+
+  /* optional: pause animation on hover */
+  .stage:hover .bulb { animation-play-state: paused; }
+
+  /* small responsive tweak */
+  @media (max-width:420px){
+    :root { --size: 120px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="stage" aria-hidden="false">
+  <div class="glow" aria-hidden="true"></div>
+
+  <!-- SVG bulb; front and back look the same so rotateY creates the mirror flip -->
+  <svg class="bulb bulb-face" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Light bulb">
+    <!-- glass -->
+    <defs>
+      <radialGradient id="g1" cx="35%" cy="30%">
+        <stop offset="0%" stop-color="#fff9d6" />
+        <stop offset="35%" stop-color="#fff2b0" />
+        <stop offset="80%" stop-color="#ffd66a" />
+        <stop offset="100%" stop-color="#f7c94a" />
+      </radialGradient>
+
+      <linearGradient id="metal" x1="0" x2="0" y1="0" y2="1">
+        <stop offset="0%" stop-color="#bdbdbd"/>
+        <stop offset="100%" stop-color="#8c8c8c"/>
+      </linearGradient>
+    </defs>
+
+    <!-- bulb glass -->
+    <g transform="translate(0,2)">
+      <path d="M32 4
+               c-7 0-13 5.5-14 12.5
+               c-0.9 4.8 0.5 9 3.5 12
+               c1.6 1.6 3 3 3.5 5.4
+               c0.4 2 0 4.2 0 5.8
+               h17
+               c0-1.6-0.4-3.8 0-5.8
+               c0.5-2.4 1.9-3.8 3.5-5.4
+               c3-3 4.4-7.2 3.5-12
+               C45 9.5 39 4 32 4z"
+            fill="url(#g1)" stroke="#f0c55e" stroke-width="0.8"/>
+      <!-- filament / inner lines -->
+      <g class="filament" transform="translate(0,6)">
+        <path d="M26 30
+                 c0-5 6-8 6-12
+                 c0 4 6 7 6 12"
+              fill="none" stroke="#8f4a00" stroke-linecap="round" stroke-width="1.4"/>
+        <circle cx="32" cy="20" r="2" fill="#ffd27a" />
+      </g>
+
+      <!-- metal base -->
+      <rect x="22" y="34" width="20" height="8" rx="1.6" fill="url(#metal)" />
+      <rect x="24" y="42" width="16" height="6" rx="1" fill="#6e6e6e" />
+      <!-- screw grooves -->
+      <path d="M24 35 h16" stroke="#9b9b9b" stroke-width="0.8"/>
+      <path d="M24 37 h16" stroke="#9b9b9b" stroke-width="0.6"/>
+      <path d="M24 39 h16" stroke="#9b9b9b" stroke-width="0.5"/>
+    </g>
+  </svg>
+
+  <div class="base-shadow" aria-hidden="true"></div>
+</div>
+
+</body>
+</html>

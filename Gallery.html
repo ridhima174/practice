@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery Section</title>
+  <link rel="stylesheet" href="Gallery.css" />
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+</head>
+<body>
+
+  <!-- ========== UPPER SECTION ========== -->
+  <section class="gallery-header">
+    <h2>OUR GALLERY</h2>
+    <p class="gallery-subheading">A glimpse into our events and initiatives</p>
+  </section>
+
+  <!-- ========== LOWER SECTION (IMAGES) ========== -->
+  <section class="gallery-content">
+    <div class="gallery-container">
+      <div class="gallery-item"><img src="image.png" alt="Gallery Image 1"></div>
+      <div class="gallery-item"><img src="nn.jpeg" alt="Gallery Image 2"></div>
+      <div class="gallery-item"><img src="bye.png" alt="Gallery Image 3"></div>
+      <div class="gallery-item"><img src="biii.png" alt="Gallery Image 4"></div>
+      <div class="gallery-item"><img src="ss.png" alt="Gallery Image 5"></div>
+      <div class="gallery-item"><img src="y.png" alt="Gallery Image 6"></div>
+       <div class="gallery-item"><img src="r.png" alt="Gallery Image 6"></div>
+        <div class="gallery-item"><img src="spot.jpeg" alt="Gallery Image 6"></div>
+         <div class="gallery-item"><img src="kaang.png" alt="Gallery Image 6"></div>
+          <div class="gallery-item"><img src="ga.jpeg" alt="Gallery Image 6"></div>
+           <div class="gallery-item"><img src="gal.jpeg" alt="Gallery Image 6"></div>
+            <div class="gallery-item"><img src="gall.jpeg" alt="Gallery Image 6"></div>
+    </div>
+  </section>
+<!-- ===================== CELEBRATING SUCCESS SECTION ===================== -->
+<section class="success-section">
+  <div class="success-header">
+    <h2>IN SPOTLIGHT</h2>
+    <p>Meet the past winners of E-Cell PCTE competitions and get inspired by their entrepreneurial journeys.</p>
+  </div>
+
+  <div class="success-carousel">
+    <div class="success-slide active">
+      <img src="sp.jpeg" alt="E-Cell Team 2023">
+      <p class="caption">future business sharks 3.0 by TiE Chandigarh at Amity university</p>
+    </div>
+
+    <div class="success-slide">
+      <img src="MISS.png" alt="E-Cell Team 2022">
+      <p class="caption">Start-up Bootcamp</p>
+    </div>
+
+    <div class="success-slide">
+      <img src="win1.png" alt="E-Cell Team 2021">
+      <p class="caption">Punjab Innovation Challenge Winner</p>
+    </div>
+
+    <div class="success-slide">
+      <img src="spotl.jpeg" alt="E-Cell Team 2021">
+      <p class="caption">ISTE-SLIET Innovation Summit by SLIET Longowal</p>
+    </div>
+
+      <div class="success-slide">
+      <img src="yy.jpeg" alt="E-Cell Team 2021">
+      <p class="caption"> Four PCTEians selected for 'THE RISING STARTUPS OF PUNJAB <br>
+      out of 300+</p>
+    </div>
+      
+    <div class="success-slide">
+      <img src="PLL.png" alt="E-Cell Team 2021">
+      <p class="caption"> 3 day STARTUP BOOTCAMP</p>
+    </div>
+      <div class="success-slide">
+      <img src="ll.jpeg" alt="E-Cell Team 2021">
+      <p class="caption">Ms. Karamjeet kaur of startup Twilight of PCTE got first prize<br>& INR 50000 at GNDEC ludhiana</p>
+    </div>
+
+    <!-- navigation arrows -->
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+</section>
+<script>
+  let slideIndex = 0;
+  const slides = document.querySelectorAll('.success-slide');
+  const nextBtn = document.querySelector('.next');
+  const prevBtn = document.querySelector('.prev');
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+  }
+
+  nextBtn.addEventListener('click', () => {
+    slideIndex = (slideIndex + 1) % slides.length;
+    showSlide(slideIndex);
+  });
+
+  prevBtn.addEventListener('click', () => {
+    slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+    showSlide(slideIndex);
+  });
+
+  setInterval(() => {
+    slideIndex = (slideIndex + 1) % slides.length;
+    showSlide(slideIndex);
+  }, 5000);
+</script>
+</body>
+</html>
+<!-- ===================== FOOTER SECTION ===================== -->
+<footer class="footer">
+  <div class="footer-container">
+    
+    <div class="footer-about">
+      <h3><i class="fas fa-lightbulb"></i> The Entrepreneurship Cell</h3>
+      <p>PCTE Group of Institutes</p>
+
+      <h4></h4>
+      <div class="newsletter">
+        <input type="email" placeholder="Enter your email">
+        <button>&rarr;</button>
+      </div>
+
+      <p class="social-text">Get connected with us on social networks:</p>
+      <div class="social-icons">
+        <a href="#"><img src="linkedin.png" alt="LinkedIn"></a>
+        <a href="#"><img src="instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="facebook.png" alt="Facebook"></a>
+       
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h4>OUR EVENTS</h4>
+      <ul>
+        <li>Future Business Shark </li>
+        <li>Startup Bootcamp</li>
+        <li>Monthly Innovation Challenge</li>
+        <li>Workshops</li>
+        <li>TEDx</li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h4>USEFUL LINKS</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+               <li><a href="event.html">Events</a></li>
+       <li><a href="Startups.html">Startups</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+<div class="footer-contact">
+  <h4>CONTACT</h4>
+
+  <!-- Google Maps link -->
+  <p>
+    <i class="fas fa-map-marker-alt"></i>
+    <a 
+      href="https://maps.app.goo.gl/dwWzqrpTkEASabdW7" 
+      target="_blank" 
+      class="footer-link"
+    >
+      PCTE Group of Institutes, Ludhiana, Punjab
+    </a>
+  </p>
+
+  <!-- Clickable email link -->
+  <p>
+    <i class="fas fa-envelope"></i>
+    <a href="mailto:support@pcteecell.in" class="footer-link">
+      support@pcteecell.in
+    </a>
+  </p>
+</div>
+</div>
+
+<hr>
+<p class="footer-bottom">
+  © 2025 Copyright: E-Cell PCTE | All Rights Reserved
+</p>
+</footer>
+
+
+</body>
+</html>
